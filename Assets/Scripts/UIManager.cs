@@ -14,6 +14,14 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         ShowConnectionPannel();
+        GameStateManager.onGameStateChanged += GameStateChangedCallback;
+    }
+    private void GameStateChangedCallback(GameStateManager.State gameState){
+        switch(gameState){
+            case GameStateManager.State.Game:
+                ShowGamePannel();
+                break;
+        }
     }
 
     // Update is called once per frame
@@ -44,5 +52,8 @@ public class UIManager : MonoBehaviour
     public void ClientButtonCallback(){
         NetworkManager.Singleton.StartClient();
         ShowWaitingPannel();
+    }
+    public void OnDestroy(){
+        GameStateManager.onGameStateChanged -= GameStateChangedCallback;
     }
 }
