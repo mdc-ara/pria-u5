@@ -6,9 +6,15 @@ using System;
 
 public class EggManager : NetworkBehaviour
 {
+    public static EggManager instance;
     [Header(" Elements ")]
     [SerializeField] private Egg eggPrefab;
-    // Start is called before the first frame update
+    private void Awake(){
+        if(instance==null)
+            instance=this;
+        else
+            Destroy(gameObject);
+    }
     void Start()
     {
         GameStateManager.onGameStateChanged += GameStateChangedCallback;
@@ -29,5 +35,13 @@ public class EggManager : NetworkBehaviour
             return;
         Egg eggInstance = Instantiate(eggPrefab,Vector2.up * 5,Quaternion.identity);
         eggInstance.GetComponent<NetworkObject>().Spawn();
+        eggInstance.transform.SetParent(this.transform);
+    }
+    public void ReuseEgg(){
+        if(!IsServer)
+            return;
+        if(transform.childCount <=0)
+            return;
+        transform.GetChild(0).GetComponent<Egg>().Reuse();
     }
 }

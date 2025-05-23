@@ -36,7 +36,7 @@ Transform:
   m_Children:
   - {fileID: 2133735917657953889}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &2133735917489564235
 Rigidbody2D:
@@ -173,7 +173,7 @@ MonoBehaviour:
   RotAngleThreshold: 0.01
   ScaleThreshold: 0.01
   InLocalSpace: 0
-  Interpolate: 1
+  Interpolate: 0
 --- !u!114 &4538592080171378815
 MonoBehaviour:
   m_ObjectHideFlags: 0

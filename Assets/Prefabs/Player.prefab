@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 2446992216307884648}
   - component: {fileID: 1266703027302220227}
   - component: {fileID: 6991412682102552125}
+  - component: {fileID: 7555655091129036546}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -211,7 +212,7 @@ MonoBehaviour:
   RotAngleThreshold: 0.01
   ScaleThreshold: 0.01
   InLocalSpace: 0
-  Interpolate: 1
+  Interpolate: 0
 --- !u!114 &6991412682102552125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,3 +227,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   renderers:
   - {fileID: 2739866474256775012}
+--- !u!114 &7555655091129036546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2739866474315840381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b61aa18bd9bf8a409ebdbbc2bd2b8f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderes:
+  - {fileID: 2739866474256775012}
+  colider: {fileID: 2739866474315840378}
